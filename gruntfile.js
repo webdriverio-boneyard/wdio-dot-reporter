@@ -36,8 +36,7 @@ module.exports = function(grunt) {
         },
         bump: {
             options: {
-                commitMessage: 'v%VERSION%',
-                pushTo: 'upstream'
+                commitMessage: 'v%VERSION%'
             }
         }
     });
