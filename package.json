@@ -2,13 +2,20 @@
   "name": "wdio-dot-reporter",
   "version": "0.0.1",
   "description": "A WebdriverIO plugin. Report results in dot format.",
-  "main": "build/reporter.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Christian Bromann <christian@saucelabs.com>",
+  "homepage": "https://github.com/webdriverio/wdio-dot-reporter#readme",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webdriverio/wdio-dot-reporter.git"
+  },
+  "main": "build/reporter.js",
+  "files": ["./build"],
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "dot",
@@ -18,12 +25,9 @@
     "wdio-plugin",
     "wdio-reporter"
   ],
-  "author": "Christian Bromann <christian@saucelabs.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/webdriverio/wdio-dot-reporter/issues"
   },
-  "homepage": "https://github.com/webdriverio/wdio-dot-reporter#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^4.1.1",
