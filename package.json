@@ -10,9 +10,6 @@
     "url": "git+https://github.com/webdriverio/wdio-dot-reporter.git"
   },
   "main": "build/reporter.js",
-  "files": [
-    "./build"
-  ],
   "directories": {
     "lib": "./lib"
   },
