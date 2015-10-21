@@ -2,5 +2,10 @@
   "extends": "standard",
   "rules": {
     "indent": [2, 4]
+  },
+  "globals": {
+    "it": true,
+    "describe": true,
+    "beforeEach": true
   }
 }
