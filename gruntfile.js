@@ -1,3 +1,5 @@
+var path = require('path')
+
 module.exports = function (grunt) {
     grunt.initConfig({
         pkgFile: 'package.json',
@@ -25,7 +27,8 @@ module.exports = function (grunt) {
                     require: [
                         'should',
                         './test/bootstrap'
-                    ]
+                    ],
+                    scriptPath: path.join(__dirname, 'node_modules', 'babel-istanbul', 'lib', 'cli')
                 }
             }
         },
