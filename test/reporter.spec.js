@@ -8,12 +8,12 @@ class BaseReporter extends events.EventEmitter {
     }
 
     get color () {
-        return {}
+        return 'some color'
     }
 }
 
 var baseReporterMock = new BaseReporter()
-var reporter, logMock, printDotsMock, epilogueMock
+var reporter, printDotsMock, epilogueMock
 
 describe('dot reporter', () => {
     beforeEach(() => {
@@ -24,6 +24,12 @@ describe('dot reporter', () => {
         baseReporterMock.printDots = printDotsMock
 
         reporter = new DotReporter(baseReporterMock)
+    })
+
+    it('should print nothing when testrun starts', () => {
+        reporter.printDots = sinon.spy()
+        reporter.emit('start')
+        reporter.printDots.calledWith(null).should.be.true
     })
 
     it('should print \\n and call baseReporters epilogue when suite ends', () => {
@@ -53,5 +59,15 @@ describe('dot reporter', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('test:pending')
         reporter.printDots.calledWith('pending').should.be.true
+    })
+
+    it('should print nothing when test ends', () => {
+        reporter.printDots = sinon.spy()
+        reporter.emit('test:end')
+        reporter.printDots.calledWith(null).should.be.true
+    })
+
+    it('printDots should return nothing if status is falsy', () => {
+        (reporter.printDots() === undefined).should.be.true
     })
 })
