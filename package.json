@@ -14,7 +14,9 @@
     "lib": "./lib"
   },
   "scripts": {
-    "test": "./node_modules/.bin/grunt"
+    "test": "grunt",
+    "build": "grunt build",
+    "prepublish": "npm prune && npm build"
   },
   "keywords": [
     "dot",
