@@ -23,7 +23,7 @@ You can simple do it by:
 npm install wdio-dot-reporter --save-dev
 ```
 
-Instructions on how to install `WebdriverIO` can be found [here.](http://webdriver.io/guide/getstarted/install.html)
+Instructions on how to install `WebdriverIO` can be found [here](http://webdriver.io/guide/getstarted/install.html).
 
 ## Configuration
 
@@ -34,7 +34,7 @@ to the array.
 // wdio.conf.js
 module.exports = {
   // ...
-  reporter: ['dot'],
+  reporters: ['dot'],
   // ...
 };
 ```
