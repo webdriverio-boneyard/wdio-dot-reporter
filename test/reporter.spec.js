@@ -13,17 +13,19 @@ class BaseReporter extends events.EventEmitter {
 }
 
 var baseReporterMock = new BaseReporter()
-var reporter, printDotsMock, epilogueMock
+var reporter, printDotsMock, epilogueMock, resetMock
 
 describe('dot reporter', () => {
     beforeEach(() => {
         printDotsMock = sinon.spy()
         epilogueMock = sinon.spy()
+        resetMock = sinon.spy()
 
         baseReporterMock.epilogue = epilogueMock
         baseReporterMock.printDots = printDotsMock
+        baseReporterMock.stats = { reset: resetMock }
 
-        reporter = new DotReporter(baseReporterMock)
+        reporter = new DotReporter(baseReporterMock, {})
     })
 
     it('should print nothing when testrun starts', () => {
@@ -69,5 +71,20 @@ describe('dot reporter', () => {
 
     it('printDots should return nothing if status is falsy', () => {
         (reporter.printDots() === undefined).should.be.true
+    })
+
+    describe('should trigger runner:end in watch mode', () => {
+        beforeEach(() => {
+            reporter = new DotReporter(baseReporterMock, { watch: true })
+        })
+
+        it('should call epiloge in watch mode', () => {
+            reporter.emit('end')
+            epilogueMock.called.should.not.be.true()
+
+            reporter.emit('runner:end')
+            epilogueMock.called.should.be.true()
+            resetMock.called.should.be.true()
+        })
     })
 })
