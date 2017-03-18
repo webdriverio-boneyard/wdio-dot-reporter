@@ -31,7 +31,7 @@ describe('dot reporter', () => {
     it('should print nothing when testrun starts', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('start')
-        reporter.printDots.calledWith(null).should.be.true()
+        reporter.printDots.notCalled.should.be.true()
     })
 
     it('should print \\n and call baseReporters epilogue when suite ends', () => {
