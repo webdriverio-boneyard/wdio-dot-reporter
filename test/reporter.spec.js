@@ -31,7 +31,7 @@ describe('dot reporter', () => {
     it('should print nothing when testrun starts', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('start')
-        reporter.printDots.calledWith(null).should.be.true
+        reporter.printDots.calledWith(null).should.be.true()
     })
 
     it('should print \\n and call baseReporters epilogue when suite ends', () => {
@@ -42,35 +42,35 @@ describe('dot reporter', () => {
     it('should print pending dots for pending events', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('test:pending')
-        reporter.printDots.calledWith('pending').should.be.true
+        reporter.printDots.calledWith('pending').should.be.true()
     })
 
     it('should print pass dots for passing events', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('test:pass')
-        reporter.printDots.calledWith('green').should.be.true
+        reporter.printDots.calledWith('green').should.be.true()
     })
 
     it('should print fail dots for failing events', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('test:fail')
-        reporter.printDots.calledWith('fail').should.be.true
+        reporter.printDots.calledWith('fail').should.be.true()
     })
 
     it('should print pending dots for pending events', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('test:pending')
-        reporter.printDots.calledWith('pending').should.be.true
+        reporter.printDots.calledWith('pending').should.be.true()
     })
 
     it('should print nothing when test ends', () => {
         reporter.printDots = sinon.spy()
         reporter.emit('test:end')
-        reporter.printDots.calledWith(null).should.be.true
+        reporter.printDots.calledWith(null).should.be.true()
     })
 
     it('printDots should return nothing if status is falsy', () => {
-        (reporter.printDots() === undefined).should.be.true
+        (reporter.printDots() === undefined).should.be.true()
     })
 
     describe('should trigger runner:end in watch mode', () => {
