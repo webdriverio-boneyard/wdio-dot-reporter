@@ -1,5 +1,9 @@
-WDIO Dot reporter [![Build Status](https://travis-ci.org/webdriverio/wdio-dot-reporter.svg?branch=master)](https://travis-ci.org/webdriverio/wdio-dot-reporter) [![Code Climate](https://codeclimate.com/github/webdriverio/wdio-dot-reporter/badges/gpa.svg)](https://codeclimate.com/github/webdriverio/wdio-dot-reporter) [![Test Coverage](https://codeclimate.com/github/webdriverio/wdio-dot-reporter/badges/coverage.svg?)](https://codeclimate.com/github/webdriverio/wdio-dot-reporter/coverage)
-==========
+WDIO Dot Reporter
+=================
+
+[![Build Status](https://travis-ci.org/webdriverio/wdio-dot-reporter.svg?branch=master)](https://travis-ci.org/webdriverio/wdio-dot-reporter) [![Code Climate](https://codeclimate.com/github/webdriverio/wdio-dot-reporter/badges/gpa.svg)](https://codeclimate.com/github/webdriverio/wdio-dot-reporter) [![Test Coverage](https://codeclimate.com/github/webdriverio/wdio-dot-reporter/badges/coverage.svg)](https://codeclimate.com/github/webdriverio/wdio-dot-reporter/coverage) [![dependencies Status](https://david-dm.org/webdriverio/wdio-dot-reporter/status.svg)](https://david-dm.org/webdriverio/wdio-dot-reporter)
+
+***
 
 > A WebdriverIO plugin to report in dot style.
 
@@ -12,7 +16,7 @@ The easiest way is to keep `wdio-dot-reporter` as a devDependency in your `packa
 ```json
 {
   "devDependencies": {
-    "wdio-dot-reporter": "~0.4.x"
+    "wdio-dot-reporter": "~0.0.8"
   }
 }
 ```
@@ -37,6 +41,31 @@ module.exports = {
   reporters: ['dot'],
   // ...
 };
+```
+
+## Development
+
+All commands can be found in the package.json. The most important are:
+
+Watch changes:
+
+```sh
+$ npm run watch
+```
+
+Run tests:
+
+```sh
+$ npm test
+
+# run test with coverage report:
+$ npm run test:cover
+```
+
+Build package:
+
+```sh
+$ npm build
 ```
 
 ----
